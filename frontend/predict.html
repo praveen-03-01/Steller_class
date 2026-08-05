@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>StellarClass AI</title>
+
+<link rel="stylesheet" href="CSS/predict_style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<header>
+
+<h2>StellarClass AI</h2>
+
+</header>
+
+
+
+<h1>
+Predict Stellar Class
+</h1>
+
+
+<p class="subtitle">
+Enter astronomical parameters to classify the object.
+</p>
+
+
+
+<div class="card">
+
+
+<div class="grid">
+
+
+<div>
+<label>Alpha</label>
+<input id="alpha" type="number" step="any">
+</div>
+
+
+<div>
+<label>Delta</label>
+<input id="delta" type="number" step="any">
+</div>
+
+
+<div>
+<label>U Magnitude</label>
+<input id="u" type="number" step="any">
+</div>
+
+
+<div>
+<label>G Magnitude</label>
+<input id="g" type="number" step="any">
+</div>
+
+
+<div>
+<label>R Magnitude</label>
+<input id="r" type="number" step="any">
+</div>
+
+
+<div>
+<label>I Magnitude</label>
+<input id="i" type="number" step="any">
+</div>
+
+
+<div>
+<label>Z Magnitude</label>
+<input id="z" type="number" step="any">
+</div>
+
+
+<div>
+<label>Redshift</label>
+<input id="redshift" type="number" step="any">
+</div>
+
+
+</div>
+
+
+
+<label>Spectral Type</label>
+
+<select id="spectral_type">
+
+<option value="O">O</option>
+<option value="B">B</option>
+<option value="A">A</option>
+<option value="F">F</option>
+<option value="G">G</option>
+<option value="K">K</option>
+<option value="M">M</option>
+
+</select>
+
+
+
+<label>Galaxy Population</label>
+
+<select id="galaxy_population">
+
+<option value="Blue">
+Blue
+</option>
+
+<option value="Red_Sequence">
+Red Sequence
+</option>
+
+<option value="Green_Valley">
+Green Valley
+</option>
+
+
+</select>
+
+
+
+
+<button onclick="predict()">
+
+Predict Stellar Class
+
+</button>
+
+
+
+<h3 id="result"></h3>
+
+<div class="result-card">
+
+    <h2>
+        Prediction Result
+    </h2>
+    <p id="message">
+        Waiting for prediction...
+    </p>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

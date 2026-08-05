@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<title>
+Prediction History
+</title>
+
+
+<link rel="stylesheet" href="CSS/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+Prediction History
+</h1>
+
+
+
+<table border="1" width="100%">
+
+
+<thead>
+
+<tr>
+
+<th>Date</th>
+
+<th>Alpha</th>
+
+<th>Delta</th>
+
+<th>Redshift</th>
+
+<th>Spectral Type</th>
+
+<th>Population</th>
+
+<th>Prediction</th>
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="historyTable">
+
+
+</tbody>
+
+
+</table>
+
+
+
+<br><br>
+
+
+<button onclick="clearHistory()">
+
+Clear History
+
+</button>
+
+
+
+<br><br>
+
+
+<a href="dashboard.html">
+
+Back to Dashboard
+
+</a>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+let history = JSON.parse(
+
+localStorage.getItem("predictionHistory")
+
+) || [];
+
+
+
+let table = document.getElementById(
+"historyTable"
+);
+
+
+history.forEach(function(item){
+
+
+
+let row = `
+
+
+<tr>
+
+<td>
+${item.date}
+</td>
+
+
+<td>
+${item.alpha}
+</td>
+
+
+<td>
+${item.delta}
+</td>
+
+
+<td>
+${item.redshift}
+</td>
+
+
+<td>
+${item.spectral_type}
+</td>
+
+
+<td>
+${item.galaxy_population}
+</td>
+
+
+<td>
+<strong>
+${item.prediction}
+</strong>
+</td>
+
+
+</tr>
+
+
+`;
+
+
+
+table.innerHTML += row;
+
+
+
+});
+
+
+function clearHistory(){
+
+
+localStorage.removeItem(
+"predictionHistory"
+);
+
+
+
+alert(
+"Prediction history cleared"
+);
+
+
+
+location.reload();
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
